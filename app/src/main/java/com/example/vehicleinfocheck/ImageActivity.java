@@ -26,7 +26,7 @@ import androidx.core.content.FileProvider;
 
 import com.example.vehicleinfocheck.ml.BmpCharacterRecognitionModel;
 import com.example.vehicleinfocheck.ml.CharacterRecognitionModel;
-import com.theartofdev.edmodo.cropper.CropImage;
+import com.canhub.cropper.CropImage;
 
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
@@ -192,7 +192,7 @@ public class ImageActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 assert result != null;
-                Uri resultUri = result.getUri();
+                Uri resultUri = result.getUriContent();
                 selectedImage.setImageURI(resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 assert result != null;
@@ -206,7 +206,7 @@ public class ImageActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 assert result != null;
-                Uri resultUri = result.getUri();
+                Uri resultUri = result.getUriContent();
                 selectedImage.setImageURI(resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 assert result != null;
